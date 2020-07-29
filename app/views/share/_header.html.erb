@@ -1,21 +1,15 @@
-<div class="card-header">
-  <div class="row">
-    <div class="col-11">
-      <p><%= link_to "Home", root_path, class:"home" %>
-    </div>
-    <div class="col-1">
-      <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <% if user_signed_in? %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
-          <% else %>
-            <%= link_to "Sign In", new_user_session_path, class:"dropdown-item" %>
-            <%= link_to "Sign Up", new_user_registration_path, class:"dropdown-item" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-</div>
-
+<header>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <%= link_to root_path, class: "my-0 mr-md-auto font-weight-normal" do %>
+      <h5>Company name</h5>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-outline-danger" %>
+    <% else %>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <%= link_to "Sign In", new_user_session_path, class:"p-2 text-dark" %>
+      </nav>
+      <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-outline-primary" %>
+    <% end %>
+  </div>
+</header>
