@@ -1,0 +1,26 @@
+<div class="container">
+  <%= link_to 'Create Wallet', new_wallet_path , class:"btn btn-outline-dark" %>
+  <p>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <% @wallets.each do |wallet| %>
+      <tbody>
+        <tr>
+          <th scope="row"><%= wallet.id %></th>
+          <td> <%=wallet.title %></td>
+          <td> <p class="text-muted">
+            <%= link_to 'Show', wallet %>
+            <%= link_to 'Edit', edit_wallet_path(wallet) %>
+            <%= link_to 'Destroy', wallet, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      </tbody>
+    <% end %>
+ </table>
+ </div>
