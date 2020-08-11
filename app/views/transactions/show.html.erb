@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 align="center"> Transaction</h1>
+  <h3> Transactions: </h3>
+  <p><%= @transaction.title %>
+
+  <h3> Amount: </h3>
+  <p><%= @transaction.amount %>
+
+
+  <p><%= link_to 'Destroy', @transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <p><%= link_to 'Back', transactions_path %>
+
+</div>
