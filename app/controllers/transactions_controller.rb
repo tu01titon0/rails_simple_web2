@@ -4,7 +4,7 @@ class TransactionsController < ApplicationController
 
 
   def index
-    @transactions = current_user.transactions
+    @transactions = current_user.transactions.page(params[:page])
   end
 
   def new
@@ -47,7 +47,7 @@ class TransactionsController < ApplicationController
   end
 
   def transaction_params
-    params.require(:transaction).permit(:title ,:amount, :wallet_id, :type)
+    params.require(:transaction).permit(:title ,:amount, :wallet_id, :transaction_type)
   end
 
   def set_transaction

@@ -1,0 +1,17 @@
+a{
+  color:black
+}
+.page-link{
+  color: black;
+  background-color:white;
+}
+.page-item.active .page-link {
+  z-index: 1;
+  color: white;
+  background-color: black;
+  border-color: black;
+}
+.pagination{
+  margin: auto;
+  width: 50%;
+}

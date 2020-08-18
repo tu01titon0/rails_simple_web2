@@ -3,7 +3,7 @@ class WalletsController < ApplicationController
   before_action :set_wallet, only: [:show, :update, :destroy, :edit]
 
   def index
-    @wallets = current_user.wallets
+    @wallets = current_user.wallets.includes(:transactions).page(params[:page])
   end
 
   def new
