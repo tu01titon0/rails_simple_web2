@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem "devise", "~> 4.1"
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'kaminari'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

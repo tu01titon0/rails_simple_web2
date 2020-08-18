@@ -4,7 +4,7 @@ class TransactionsController < ApplicationController
 
 
   def index
-    @transactions= current_user.transactions
+    @transactions = current_user.transactions
   end
 
   def new
@@ -12,6 +12,7 @@ class TransactionsController < ApplicationController
   end
 
   def create
+    byebug
     @transaction = current_user.transactions.new(transaction_params)
 
     respond_to do |format|
@@ -43,18 +44,14 @@ class TransactionsController < ApplicationController
     end
   end
 
-
-
   def show
   end
 
-
   def transaction_params
-    params.require(:transaction).permit(:title ,:amount, :wallet_id)
+    params.require(:transaction).permit(:title ,:amount, :wallet_id, :type)
   end
 
   def set_transaction
-    @wallet = Wallet.find(params[:id])
+    @transaction = Transaction.find(params[:id])
   end
-
 end
