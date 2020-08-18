@@ -12,7 +12,6 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    byebug
     @transaction = current_user.transactions.new(transaction_params)
 
     respond_to do |format|
